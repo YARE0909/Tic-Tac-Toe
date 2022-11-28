@@ -65,9 +65,14 @@ elif start.lower() == 'y':
 
     # Main game loop
     while (gameOver < 1):
-
-        userRowInput = int(input("Enter row: "))
-        userColumnInput = int(input("Enter column: "))
+        userRowInputs = ''
+        userColumnInputs = ''
+        while userRowInputs == '':
+            userRowInputs = input("Enter row: ")
+        while userColumnInputs == '':
+            userColumnInputs = input("Enter column: ")
+        userRowInput = int(userRowInputs)
+        userColumnInput = int(userColumnInputs)
         if userRowInput > 2 or userColumnInput > 2:
             print("Please enter index in the range 0 - 2")
         elif mainBoard[userRowInput][userColumnInput] != '_':
